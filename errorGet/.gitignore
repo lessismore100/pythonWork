@@ -1,0 +1,38 @@
+/venv/
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+# Built application files
+*.apk
+*.ap_
+
+# Files for the Dalvik VM
+*.dex
+*.iml
+apk/
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+
+# Gradle files
+.idea/
+.gradle/
+target/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+#Log Files
+*.log
