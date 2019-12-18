@@ -12,20 +12,19 @@ def gci(filepath,dstfilepath):
     for f in files:
         # print(">>>" + os.path.split(filepath,f)[0])
         # fpath, fname = os.path.split(dstfile)  # 分离文件名和路径
-        fileIn = os.path.join(filepath,f)
+        fileIn = os.path.join(filepath, f)
         if os.path.isdir(fileIn):
-            gci(fileIn,dstfilepath)
+            gci(fileIn, dstfilepath)
         else:
             fileOutput = os.path.join(filepath,fileIn)
             # print(fileOutput)
 
-            fopen = open(fileOutput,'r',encoding='utf-8',errors='ignore')
+            fopen = open(fileOutput, 'r', encoding='utf-8', errors='ignore')
             fContent = fopen.read()
             # print(fContent)
             # fopen.close()
 
             # time.sleep(3)
-
 
             if fContent.find("versionName=4.0.0") != -1:
                 # print(fContent)
@@ -33,8 +32,8 @@ def gci(filepath,dstfilepath):
                 if not os.path.exists(dstfilepath):
                     os.makedirs(dstfilepath)
                 fpath, fname = os.path.split(fileOutput)  # 分离文件名和路径
-                shutil.move(fileOutput,dstfilepath+fname)
-                print("\r\n>>>move: " + '{0} {1} {2}'.format(fileOutput,"-->",dstfilepath+fname))
+                shutil.move(fileOutput, dstfilepath+fname)
+                print("\r\n>>>move: " + '{0} {1} {2}'.format(fileOutput, "-->", dstfilepath+fname))
                 # findCount += 1
             else:
                 print("not found...")
